@@ -1,0 +1,23 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'ervandew/supertab'
+Plugin 'bling/vim-airline'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-markdown'
+Plugin 'sjl/badwolf'
+call vundle#end()
+syntax enable on
+filetype plugin indent on
+

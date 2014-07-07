@@ -57,7 +57,8 @@ set nowrap
 set spell
 set lcs=tab:▸\ ,eol:¶
 colorscheme badwolf
-let g:airline_powerline_fonts = 1
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12 " For macvim and gvim
+let g:airline_powerline_fonts = 1 " requires powerline fonts to be installed
 
 " Backups and Files
 set backup

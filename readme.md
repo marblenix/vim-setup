@@ -14,6 +14,10 @@ Warning: this is destructive; make sure you have ~/.vim and ~/.vimrc backed up.
 
     curl -L "https://raw.githubusercontent.com/marblenix/vim-setup/master/bin/install.sh" | bash -
 
+Alternatively, if you don't want to remember this url, you can use the following, which points to the same file.
+
+    curl -L "bit.ly/marblenix-vim" | bash -
+    
 Otherwise you can manually install with the following depending on your environment:
 
 1. Backup and remove `~/.vimrc` and `~/.vim`

@@ -73,7 +73,7 @@ set viminfo+=n$HOME/.vim/session/viminfo
 set dictionary=/usr/share/dict/words
 
 " Remaps
-command! InsertISO8601 :normal a<c-r>=strftime('%Y-%m-%d')<cr> " insert date yyyy-mm-dd
+command! InsertISO8601 :normal a<c-r>=strftime('%Y-%m-%d')<cr>
 inoremap <leader>d <esc>:InsertISO8601<cr>a
 nnoremap <leader>d :InsertISO8601<cr>
 nnoremap <cr> :nohlsearch<cr>:redraw!<cr>

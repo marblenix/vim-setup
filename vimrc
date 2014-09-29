@@ -7,20 +7,22 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'chriskempson/base16-vim'
+Plugin 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-markdown'
+Plugin 'scrooloose/syntastic'
 Plugin 'sjl/badwolf'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 syntax enable on
 filetype plugin indent on
@@ -42,6 +44,7 @@ set cursorline
 set cindent
 set smartindent
 set autoindent
+let g:syntastic_python_python_exec = 'python3'
 
 " Visual and Editing
 set t_Co=256

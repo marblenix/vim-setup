@@ -91,7 +91,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.txt     setfiletype text
     autocmd BufRead,BufNewFile crontab.* setfiletype crontab
     autocmd FileType crontab set nobackup noswapfile noundofile expandtab
-    autocmd FileType python  set ts=4 sts=4 sw=4 noexpandtab list
+    autocmd FileType python  set ts=4 sts=4 sw=4 expandtab list
+    autocmd FileType text    set tw=80
     autocmd FileType bash,ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   augroup END
 endif

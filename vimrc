@@ -18,7 +18,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
-Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-markdown'
 Plugin 'sjl/badwolf'
@@ -55,10 +54,9 @@ set shiftwidth=2
 set laststatus=2
 set nowrap
 set spell
+set number
 set lcs=tab:▸\ ,eol:¶
 colorscheme badwolf
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12 " For macvim and gvim
-let g:airline_powerline_fonts = 1 " requires powerline fonts to be installed
 
 " Backups and Files
 set backup

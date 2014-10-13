@@ -57,7 +57,6 @@ set shiftwidth=2
 set laststatus=2
 set nowrap
 set spell
-set number
 set lcs=tab:▸\ ,eol:¶
 colorscheme badwolf
 

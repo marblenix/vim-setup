@@ -46,6 +46,12 @@ set cindent
 set smartindent
 set autoindent
 let g:syntastic_python_python_exec = 'python3'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|DS_Store|Trash)$',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+  \ }
 
 " Visual and Editing
 set t_Co=256

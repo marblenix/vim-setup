@@ -23,7 +23,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'whatyouhide/vim-gotham'
 call vundle#end()
 syntax enable on
 filetype plugin indent on
@@ -64,7 +63,7 @@ set shiftwidth=2
 set laststatus=2
 set nowrap
 set lcs=tab:▸\ ,eol:¶
-colorscheme gotham
+colorscheme badwolf
 
 " Backups and Files
 set backup

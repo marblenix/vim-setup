@@ -26,4 +26,4 @@ Otherwise you can manually install with the following depending on your environm
 4. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 5. `vim +PluginInstall +qall`
 6. `ln -s ~/.vim/vimrc ~/.vimrc`
-7. optional: Install the-silver-searcher, par, and add bin/cm to $PATH
+7. optional: Install the-silver-searcher, par

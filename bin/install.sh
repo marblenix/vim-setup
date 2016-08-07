@@ -4,7 +4,7 @@ set -eu
 
 main() {
   install
-  echo 'Setup complete, you should now install the-silver-searcher, par, powerline fonts, and exuberant ctags'
+  echo 'Setup complete.'
 }
 
 install() {

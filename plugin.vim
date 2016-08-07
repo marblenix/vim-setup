@@ -13,6 +13,7 @@ call vundle#begin()
   Plugin 'lilydjwg/colorizer'
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'tpope/vim-rails'
+  Plugin 'sjl/badwolf'
 call vundle#end()
 
 let g:syntastic_always_populate_loc_list = 1

@@ -10,7 +10,7 @@ You have two choices for installing:
 
 On clean installs it's best to run `bin/install.sh`.
 
-Warning: this is destructive; make sure you have ~/.vim and ~/.vimrc backed up.
+While this is not destructive, make sure you have ~/.vim and ~/.vimrc backed up.
 
     curl -L "https://raw.githubusercontent.com/marblenix/vim-setup/master/bin/install.sh" | bash -
 

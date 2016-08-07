@@ -7,7 +7,6 @@ filetype plugin indent on
 
 if has("win32")
   behave mswin
-
   let $PATH="C:\\Program Files\\Git\\bin\\;".$PATH
 endif
 
@@ -47,8 +46,7 @@ nnoremap <leader>d :InsertISO8601<cr>
 nnoremap <cr> :nohlsearch<cr>:redraw!<cr>
 nnoremap <silent> <C-S> :<C-u>update<CR>
 nnoremap <leader>D :b#<bar>bd#<CR>
-  " Switch to previous buffer and delete buffer switched away from
-  " Great for keeping splits open
+  " Switch to previous buffer and delete buffer switched away from; great for keeping splits open
 nnoremap <silent> <leader>DD :exe ":profile start ~/vim_debug.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
 nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 
@@ -56,7 +54,7 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 if has("autocmd")
   augroup vimrcEx
     autocmd!
-    " When vim opens, go to last position that was edited.
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+      " When vim opens, go to last position that was edited.
   augroup END
 endif

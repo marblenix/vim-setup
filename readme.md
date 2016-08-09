@@ -10,13 +10,13 @@ You have two choices for installing:
 
 On clean installs it's best to run `bin/install.sh`.
 
-While this is not destructive, make sure you have ~/.vim and ~/.vimrc backed up.
+*NOTE*: While this is not destructive, it is still a good idea to have ~/.vim and ~/.vimrc backed up.
 
-    curl -L "https://raw.githubusercontent.com/marblenix/vim-setup/master/bin/install.sh" | bash -
+    curl -sL "https://raw.githubusercontent.com/marblenix/vim-setup/master/bin/install.sh" | bash -
 
-Alternatively, if you don't want to remember this url, you can use the following, which points to the same file.
+Alternatively, if you don't want to remember/type this url, you can use the following, which redirects to the same file.
 
-    curl -L "bit.ly/marblenix-vim" | bash -
+    curl -sL "marblenix.com/vim.sh" | bash -
     
 Otherwise you can manually install with the following depending on your environment:
 
@@ -27,3 +27,10 @@ Otherwise you can manually install with the following depending on your environm
 5. `vim +PluginInstall +qall`
 6. `ln -s ~/.vim/vimrc ~/.vimrc`
 7. optional: Install par
+
+----
+
+P.S. It is always a good idea to double check that the script you
+download is the script you want to run. Feel free to expand on the
+commands above by downloading the file first before running the shell
+script.

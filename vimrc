@@ -1,5 +1,5 @@
 " Plugin Settings
-source $HOME/.vim/plugin.vim
+source $HOME/.config/nvim/plugin.config/nvim
 
 " Core
 syntax enable on
@@ -31,11 +31,11 @@ set wildignore+=*.o,*.obj,.git,Library,*.pdf,*.lock,*\\doc\\*,*/doc/*,NTUSER*,nt
 set backup
 set swapfile
 set undofile
-set dir=$HOME/.vim/session/
-set undodir=$HOME/.vim/session/undo/
-set backupdir=$HOME/.vim/session/backup/
-set directory=$HOME/.vim/session/swap/
-set viminfo+=n$HOME/.vim/session/viminfo
+set dir=$HOME/.config/nvim/session/
+set undodir=$HOME/.config/nvim/session/undo/
+set backupdir=$HOME/.config/nvim/session/backup/
+set directory=$HOME/.config/nvim/session/swap/
+set viminfo+=n$HOME/.config/nvim/session/viminfo
 
 " Remaps
 command! InsertISO8601 :normal a<c-r>=strftime('%Y-%m-%d')<cr>

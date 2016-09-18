@@ -4,15 +4,14 @@ filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'chriskempson/base16-vim'
   Plugin 'ervandew/supertab'
   Plugin 'kien/ctrlp.vim'
   Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-markdown'
   Plugin 'lilydjwg/colorizer'
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'tpope/vim-rails'
+  Plugin 'tpope/vim-fugitive'
   Plugin 'sjl/badwolf'
 call vundle#end()
 

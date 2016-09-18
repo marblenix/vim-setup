@@ -1,5 +1,5 @@
 " Plugin Settings
-source $HOME/.config/nvim/plugin.config/nvim
+source $HOME/.config/nvim/plugin.vim
 
 " Core
 syntax enable on

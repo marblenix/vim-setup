@@ -3,6 +3,8 @@ Introduction
 
 My personal vim install with sane defaults and useful plugins.
 
+Neovim users please see the neovim branch.
+
 Installation
 ------------
 

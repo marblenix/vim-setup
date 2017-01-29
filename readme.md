@@ -16,14 +16,10 @@ On clean installs it's best to run `bin/install.sh`.
 
     curl -sL "https://raw.githubusercontent.com/marblenix/vim-setup/master/bin/install.sh" | bash -
 
-Alternatively, if you don't want to remember/type this url, you can use the following, which redirects to the same file.
-
-    curl -sL "marblenix.com/vim.sh" | bash -
-
 Or, for neovim users, please use:
 
-    curl -sL "marblenix.com/nvim.sh" | bash -
-    
+    curl -sL "https://raw.githubusercontent.com/marblenix/vim-setup/neovim/bin/install-nvim.sh" | bash -
+
 Otherwise you can manually install with the following depending on your environment:
 
 1. Backup and remove `~/.vimrc` and `~/.vim`

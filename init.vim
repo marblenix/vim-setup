@@ -5,18 +5,6 @@ source $HOME/.config/nvim/plugin.vim
 syntax enable on
 filetype plugin indent on
 
-" Make vim more tolerable on windows.
-if has("win32")
-    behave mswin
-    let $PATH="C:\\Program Files\\Git\\bin\\;".$PATH
-endif
-
-" Enable new neovim features
-if has("nvim")
-    " Requires >= 0.1.7 - :help icm
-    set inccommand=nosplit
-endif
-
 " Text & Color
 set background=dark
 set encoding=utf-8
@@ -65,6 +53,18 @@ vnoremap <leader>y "+y<cr>
 nnoremap <leader>D :b#<bar>bd#<cr>
 nnoremap <silent> <leader>DD :exe ":profile start ~/vim_debug.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
 nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
+
+" Make vim more tolerable on windows.
+if has("win32")
+    behave mswin
+    let $PATH="C:\\Program Files\\Git\\bin\\;".$PATH
+endif
+
+" Enable new neovim features
+if has("nvim")
+    " Requires >= 0.1.7 - :help icm
+    set inccommand=nosplit
+endif
 
 " Auto-Commands
 if has("autocmd")

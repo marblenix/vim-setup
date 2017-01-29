@@ -14,10 +14,6 @@ On clean installs it's best to run `bin/install-nvim.sh`.
 
     curl -sL "https://raw.githubusercontent.com/marblenix/vim-setup/neovim/bin/install-nvim.sh" | bash -
 
-Alternatively, if you don't want to remember/type this url, you can use the following, which redirects to the same file.
-
-    curl -sL "marblenix.com/nvim.sh" | bash -
-    
 ----
 
 P.S. It is always a good idea to double check that the script you

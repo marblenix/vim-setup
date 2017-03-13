@@ -30,7 +30,6 @@ set t_Co=256
 set colorcolumn=80
 set list
 set nowrap
-colorscheme badwolf
 
 " Statusline
 set statusline=%f        " Path to the file
@@ -40,6 +39,7 @@ set statusline+=%m       " [+] = modified, [-] = not modifiable, '' = unmodified
 set statusline+=[%l/%L]  " Current line/Total Lines
 set statusline+=%y       " Filetype of the file
 set statusline+=[%{&ff}] " UNIX/DOS line endings
+set titlestring=NeoVIM\ -\ %t\ %m
 
 " Functionality
 let mapleader=','
@@ -54,11 +54,11 @@ set regexpengine=1
 set backup
 set swapfile
 set undofile
-set dir=$HOME/.vim/session/
-set undodir=$HOME/.vim/session/undo/
-set backupdir=$HOME/.vim/session/backup/
-set directory=$HOME/.vim/session/swap/
-set viminfo+=n$HOME/.vim/session/viminfo
+set dir=$HOME/.cache/nvim/session/
+set undodir=$HOME/.cache/nvim/session/undo/
+set backupdir=$HOME/.cache/nvim/session/backup/
+set directory=$HOME/.cache/nvim/session/swap/
+set viminfo+=n$HOME/.cache/nvim/session/viminfo
 
 " Commands and functions
 command! InsertISO8601 :normal a<c-r>=strftime('%F')<cr>
@@ -70,11 +70,10 @@ function! FormatAndClean()
 endfunction
 
 " Remaps
-command! InsertISO8601 :normal a<c-r>=strftime('%Y-%m-%d')<cr>
 inoremap <leader>d <esc>:InsertISO8601<cr>a
 nnoremap <leader>d :InsertISO8601<cr>
 nnoremap <cr> :nohlsearch<cr>:redraw!<cr>
-inoremap <F1> <ESC>
+inoremap <F1> <esc>
 inoremap <silent> <c-c> <esc>
 nnoremap <silent> <c-s> :update<cr>
 

@@ -3,6 +3,8 @@ Introduction
 
 My personal neovim install with sane defaults and useful plugins.
 
+Neovim users please see the [neovim](https://github.com/marblenix/vim-setup/tree/neovim) branch.
+
 Installation
 ------------
 

@@ -48,6 +48,7 @@ set wildignore+=*.o,*.obj,.git,Library,*.pdf,*.lock,NTUSER*,ntuser*,.git*,AppDat
 set showcmd
 set title
 set regexpengine=1
+set mouse=a
 
 " Backups and Files
 " WARNING: can become very large over ~6 months of heavy use
@@ -69,6 +70,10 @@ function! FormatAndClean()
     retab
 endfunction
 
+function! FixIndentation()
+    normal gg=G''
+endfunction
+
 " Remaps
 inoremap <leader>d <esc>:InsertISO8601<cr>a
 nnoremap <leader>d :InsertISO8601<cr>
@@ -79,7 +84,7 @@ nnoremap <silent> <c-s> :update<cr>
 
 " Clean buffer
 nnoremap <leader>f :call FormatAndClean()<cr>
-nnoremap <leader>F :let save_pos = getpos('.')<cr>gg=G<cr>:call setpos('.', save_pos)<cr>
+nnoremap <leader>F :call FixIndentation()<cr>
 
 " Yank entire file or visual selection into system clipboard (requires +clipboard)
 nnoremap <leader>y :let save_pos = getpos('.')<cr>gg"+yG<cr>:call setpos('.', save_pos)<cr>

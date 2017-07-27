@@ -4,42 +4,29 @@ filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
+  Plugin 'w0rp/ale'
+  Plugin 'keith/swift.vim'
+
+  Plugin 'lilydjwg/colorizer'
+  Plugin 'sjl/badwolf'
+
+  Plugin 'roman/golden-ratio'
   Plugin 'ervandew/supertab'
   Plugin 'kien/ctrlp.vim'
-  Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-commentary'
-  Plugin 'lilydjwg/colorizer'
+  Plugin 'tpope/vim-fugitive'
+
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'tpope/vim-rails'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'sjl/badwolf'
-  Plugin 'roman/golden-ratio'
 call vundle#end()
 
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_html_tidy_ignore_errors = [
-            \'plain text isn',
-            \'escaping malformed URI reference',
-            \'is not recognized!',
-            \'discarding unexpected',
-            \'trimming empty',
-            \'inserting implicit',
-            \'proprietary attribute'
-            \]
-
-" -- Syntastic has a bug where it hangs on .java files in nvim
-" -- *-bats.sh files are for the BASH Automated Test System and cannot by
-" checked by Syntastic. https://github.com/sstephenson/bats
-let g:syntastic_ignore_files = [
-            \'\m\c\.java$',
-            \'\m\c\.env$',
-            \'\m\c-bats.sh$'
-            \]
+" ale
+" shellcheck -x follows sourced files. see `man shellcheck` for more.
+let g:ale_sh_shellcheck_options="-x"
+" For some reason not all linters are enabled by default. (swift, notably).
+for f in split(glob('~/.vim/bundle/ale/ale_linters/*/*.vim'), '\n')
+    exe 'source' f
+endfor
 
 " ctrlp
 let g:ctrlp_show_hidden = 1

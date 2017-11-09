@@ -1,32 +1,22 @@
-" Vundle
-set nocompatible
-filetype off
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'w0rp/ale'
-  Plugin 'keith/swift.vim'
+" minpac
+packadd minpac
+call minpac#init()
+call minpac#add('w0rp/ale')
+call minpac#add('chriskempson/base16-vim')
+call minpac#add('roman/golden-ratio')
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('artur-shaik/vim-javacomplete2')
+call minpac#add('rust-lang/rust.vim')
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-  Plugin 'lilydjwg/colorizer'
-  Plugin 'sjl/badwolf'
-
-  Plugin 'roman/golden-ratio'
-  Plugin 'ervandew/supertab'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-fugitive'
-
-  Plugin 'vim-ruby/vim-ruby'
-  Plugin 'tpope/vim-rails'
-call vundle#end()
+command! PluginUpdate call minpac#update()
+command! PluginClean call minpac#clean()
 
 " ale
-" shellcheck -x follows sourced files. see `man shellcheck` for more.
 let g:ale_sh_shellcheck_options="-x"
-" For some reason not all linters are enabled by default. (swift, notably).
-for f in split(glob('~/.vim/bundle/ale/ale_linters/*/*.vim'), '\n')
-    exe 'source' f
-endfor
+let g:ale_llvm_llc_options="-Weverything" "Does nothing, requires PR to ale project
+let g:ale_completion_enabled = 1
 
 " ctrlp
 let g:ctrlp_show_hidden = 1

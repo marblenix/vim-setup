@@ -18,7 +18,7 @@ if has("nvim")
 endif
 
 " Text & Color
-colorscheme badwolf
+colorscheme base16-default-dark
 set background=dark
 set encoding=utf-8
 set expandtab
@@ -59,7 +59,9 @@ set dir=$HOME/.cache/nvim/session/
 set undodir=$HOME/.cache/nvim/session/undo/
 set backupdir=$HOME/.cache/nvim/session/backup/
 set directory=$HOME/.cache/nvim/session/swap/
-set viminfo+=n$HOME/.cache/nvim/session/viminfo
+if has("nvim")
+    set viminfo+=n$HOME/.cache/nvim/session/viminfo
+endif
 
 " Commands and functions
 command! InsertISO8601 :normal a<c-r>=strftime('%F')<cr>

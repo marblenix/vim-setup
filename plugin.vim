@@ -10,6 +10,7 @@ call minpac#add('artur-shaik/vim-javacomplete2')
 call minpac#add('rust-lang/rust.vim')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
+command! PluginInstall call minpac#update()
 command! PluginUpdate call minpac#update()
 command! PluginClean call minpac#clean()
 

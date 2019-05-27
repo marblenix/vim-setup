@@ -9,8 +9,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'roman/golden-ratio'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
-Plug 'artur-shaik/vim-javacomplete2'
-Plug 'rust-lang/rust.vim'
 Plug 'junegunn/vim-plug', { 'type': 'opt' }
 call plug#end()
 

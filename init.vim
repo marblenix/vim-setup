@@ -1,5 +1,5 @@
 " Plugin Settings
-source $HOME/.config/nvim/plugin.vim
+exec "source " . stdpath('config') . "/plugin.vim"
 
 " Core
 syntax enable on
@@ -8,7 +8,6 @@ filetype plugin indent on
 " Make vim more tolerable on windows.
 if has("win32")
     behave mswin
-    let $PATH="C:\\Program Files\\Git\\bin\\;".$PATH
 endif
 
 " Enable new neovim features

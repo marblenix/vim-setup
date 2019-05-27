@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 
-set -eu
+set -e
 
-main() {
-    install
-    echo 'Setup complete.'
-}
+config_dir="$(nvim --cmd "echo stdpath('config')" --cmd qall 2>&1)"
 
-install() {
-    mkdir -p "$HOME/.config"
-    git clone -b neovim https://github.com/marblenix/vim-setup "$HOME/.config/nvim"
-    mkdir -p "$HOME/.config/nvim/pack/minpac/opt" "$HOME/.cache/nvim/session/"{backup,swap,undo}
-    git clone https://github.com/k-takata/minpac.git "$HOME/.config/nvim/pack/minpac/opt/minpac"
-    nvim -U "$HOME/.config/nvim/plugin.vim" -u "$HOME/.config/nvim/plugin.vim" +PluginInstallAndQuit &>/dev/null
-}
+mkdir -p "$config_dir" \
+    "$HOME/.cache/nvim/session/backup" \
+    "$HOME/.cache/nvim/session/swap" \
+    "$HOME/.cache/nvim/session/undo"
 
-main
+git clone --depth 1 -b neovim https://github.com/marblenix/vim-setup "$config_dir"
+git clone --depth 1 https://github.com/junegunn/vim-plug "$config_dir/pack/vim-plug/opt/vim-plug/plugin"
+
+nvim -u "$config_dir/plugin.vim" -c PlugInstall -c qall
+echo "Setup complete."

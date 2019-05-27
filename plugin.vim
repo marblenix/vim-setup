@@ -1,23 +1,21 @@
-" minpac
-packadd minpac
-call minpac#init()
-call minpac#add('w0rp/ale')
-call minpac#add('chriskempson/base16-vim')
-call minpac#add('roman/golden-ratio')
-call minpac#add('kien/ctrlp.vim')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('artur-shaik/vim-javacomplete2')
-call minpac#add('rust-lang/rust.vim')
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+if &compatible
+  set nocompatible
+endif
 
-command! PluginInstallAndQuit call minpac#update('', {'do': 'quit'})
-command! PluginInstall call minpac#update()
-command! PluginUpdate call minpac#update()
-command! PluginClean call minpac#clean()
+packadd vim-plug
+call plug#begin()
+Plug 'w0rp/ale'
+Plug 'chriskempson/base16-vim'
+Plug 'roman/golden-ratio'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'rust-lang/rust.vim'
+Plug 'junegunn/vim-plug', { 'type': 'opt' }
+call plug#end()
 
 " ale
 let g:ale_sh_shellcheck_options="-x"
-let g:ale_llvm_llc_options="-Weverything" "Does nothing, requires PR to ale project
 let g:ale_completion_enabled = 1
 
 " ctrlp

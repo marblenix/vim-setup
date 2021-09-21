@@ -12,5 +12,5 @@ mkdir -p "$config_dir" \
 git clone --depth 1 -b neovim https://github.com/marblenix/vim-setup "$config_dir"
 git clone --depth 1 https://github.com/junegunn/vim-plug "$config_dir/pack/vim-plug/opt/vim-plug/plugin"
 
-nvim -u "$config_dir/plugin.vim" -c PlugInstall -c qall
+nvim --headless -u "$config_dir/plugin.vim" -c PlugInstall -c qall
 echo "Setup complete."

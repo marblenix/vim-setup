@@ -4,17 +4,25 @@ endif
 
 packadd vim-plug
 call plug#begin()
-Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
-Plug 'roman/golden-ratio'
 Plug 'kien/ctrlp.vim'
+Plug 'markcornick/vim-bats'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'roman/golden-ratio'
 Plug 'tpope/vim-commentary'
+Plug 'w0rp/ale'
 Plug 'junegunn/vim-plug', { 'type': 'opt' }
+if has('mac')
+  Plug 'junegunn/vim-xmark', { 'do': 'make' }
+endif
 call plug#end()
 
 " ale
 let g:ale_sh_shellcheck_options="-x"
 let g:ale_completion_enabled = 1
+
+" commentary
+autocmd FileType hugo setlocal commentstring={{/*\ %s\ */}}
 
 " ctrlp
 let g:ctrlp_show_hidden = 1
@@ -29,3 +37,7 @@ let g:ctrlp_custom_ignore = {
 " golden-ratio
 " The following keeps the Syntastic window from changing size.
 let g:golden_ratio_exclude_nonmodifiable = 1
+
+" colorizer
+set termguicolors
+lua require 'colorizer'.setup()

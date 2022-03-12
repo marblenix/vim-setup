@@ -5,11 +5,6 @@ exec "source " . stdpath('config') . "/plugin.vim"
 syntax enable on
 filetype plugin indent on
 
-" Make vim more tolerable on windows.
-if has("win32")
-    behave mswin
-endif
-
 " Enable new neovim features
 if has("nvim")
     " Requires >= 0.1.7 - :help icm
@@ -17,8 +12,8 @@ if has("nvim")
 endif
 
 " Text & Color
-colorscheme base16-default-dark
-set background=dark
+colorscheme $TERM_THEME
+set background=light
 set encoding=utf-8
 set expandtab
 set hlsearch
@@ -26,11 +21,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set t_Co=256
-set colorcolumn=80
 set list
 set nowrap
 
-" Statusline
+" Statusline see ':tab help statusline'
 set statusline=%f        " Path to the file
 set statusline+=\        " Separator
 set statusline+=%=       " Align rest of the statusline to the right
@@ -38,16 +32,19 @@ set statusline+=%m       " [+] = modified, [-] = not modifiable, '' = unmodified
 set statusline+=[%l/%L]  " Current line/Total Lines
 set statusline+=%y       " Filetype of the file
 set statusline+=[%{&ff}] " UNIX/DOS line endings
-set titlestring=NeoVIM\ -\ %t\ %m
+set titlestring=NeoVIM\ -\ %f\ %m%r
+set laststatus=2
+set cmdheight=3
 
 " Functionality
 let mapleader=','
 set formatprg=par\ -w80req " requires par
-set wildignore+=*.o,*.obj,.git,Library,*.pdf,*.lock,NTUSER*,ntuser*,.git*,AppData,.*
+set mouse=a
+set number
+set regexpengine=1
 set showcmd
 set title
-set regexpengine=1
-set mouse=a
+set wildignore+=*.o,*.obj,.git,Library,*.pdf,*.lock,NTUSER*,ntuser*,.git*,AppData,.*
 
 " Backups and Files
 " WARNING: can become very large over ~6 months of heavy use
@@ -58,7 +55,7 @@ set dir=$HOME/.cache/nvim/session/
 set undodir=$HOME/.cache/nvim/session/undo/
 set backupdir=$HOME/.cache/nvim/session/backup/
 set directory=$HOME/.cache/nvim/session/swap/
-if has("nvim")
+if has('nvim')
     set viminfo+=n$HOME/.cache/nvim/session/viminfo
 endif
 
@@ -79,7 +76,6 @@ endfunction
 inoremap <leader>d <esc>:InsertISO8601<cr>a
 nnoremap <leader>d :InsertISO8601<cr>
 nnoremap <cr> :nohlsearch<cr>:redraw!<cr>
-inoremap <F1> <esc>
 inoremap <silent> <c-c> <esc>
 nnoremap <silent> <c-s> :update<cr>
 
@@ -94,6 +90,9 @@ vnoremap <leader>y "+y<cr>
 " Debug running vim instance
 nnoremap <silent> <leader>dd :exe ":profile start ~/vim_debug.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
 nnoremap <silent> <leader>dq :exe ":profile pause"<cr>:noautocmd qall!<cr>
+
+" Highlight on yank
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
 " Auto-Commands
 if has("autocmd")
